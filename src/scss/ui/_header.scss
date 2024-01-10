@@ -1,0 +1,50 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.notavif {
+    &.notwebp {
+        .site-header {
+            @include m.bgImage('../img/header.jpg', v.$secundarioOpacity);
+        }
+    }
+}
+.webp {
+    .site-header {
+        @include m.bgImage('../img/header.webp', v.$secundarioOpacity);
+    }
+}
+.avif {
+    .site-header {
+        @include m.bgImage('../img/header.avif', v.$secundarioOpacity);
+    }
+}
+
+.site-header {
+    padding: 5rem 0;
+    .logo {
+        margin: 0 auto;
+        max-width: 20rem;
+        @include m.tablet { 
+            margin: 0;
+        }
+    }
+    .contenido-header {
+        padding: 10rem 0;
+        @include m.desktop { 
+            padding: 15rem 0;
+        }
+
+        h1 {
+            color: v.$blanco;
+            font-size: 4.5rem;
+            @include m.tablet { 
+                font-size: 5rem;
+                max-width: 55%;
+            }
+            @include m.desktop {
+                font-size: 6rem;
+                max-width: 40%;
+            }
+        }
+    }
+}
